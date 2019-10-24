@@ -25,7 +25,14 @@
     "includeOriginalXaml": false,
     "privateWorkflows": [
       "ConstantValuesDist.xaml",
-      "InvokeAllTests.xaml"
+      "InvokeAllTests.xaml",
+      "TestTemplates/InvokeTestSuiteTemplate.xaml",
+      "TestTemplates/TestCaseTemplate.xaml",
+      "TestTemplates/TestRunner.xaml",
+      "TestFramework/BlankTestCase.xaml",
+      "TestFramework/InvokeTestCase.xaml",
+      "TestFramework/InvokeTestCategoryTestCases.xaml",
+      "TestFramework/TestRunner.xaml"
     ]
   },
   "webServices": []
