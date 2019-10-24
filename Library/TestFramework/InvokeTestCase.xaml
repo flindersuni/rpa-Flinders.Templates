@@ -1,0 +1,120 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InvokeTestCase" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Flinders_Foundation_Testing;assembly=Flinders.Foundation.Testing" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TestCaseFile" Type="InArgument(x:String)" />
+    <x:Property Name="TestResult" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="TestMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>376,1222</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>InvokeTestCase_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invokes a Test Case File, by dynamically changing the path to it in the TestFramework\TestRunner.xaml file and returns its result." DisplayName="InvokeTestCase" sap:VirtualizedContainerService.HintSize="336,1142" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="projectTestRunnerFilePath" />
+      <Variable x:TypeArguments="x:String" Name="projectCurrentDirectory" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="Store the current project level current directory to workaround a bug where the property is incorrectly updated if the invocation of the workflow file throws an exception. " sap:VirtualizedContainerService.HintSize="314,147" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[projectCurrentDirectory]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.Environment.CurrentDirectory]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[projectTestRunnerFilePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(projectCurrentDirectory, "TestFramework\TestRunner.xaml")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <f:DynamicallyChangeInvokeWorkflowPathInTestCaseRunner sap2010:Annotation.AnnotationText="Publication of UiPath Libraries cannot occur if a Dynamic file paths are used in an Invoke Work Flow activity.&#xA;&#xA;To work around this constraint, we dynamically edit the test runner XAML file to change the path." ExistingTestCaseFilePath="TestFramework\BlankTestCase.xaml" sap:VirtualizedContainerService.HintSize="314,169" sap2010:WorkflowViewState.IdRef="DynamicallyChangeInvokeWorkflowPathInTestCaseRunner_3" NewTestCaseFilePath="[TestCaseFile]" TestRunnerFilePath="[projectTestRunnerFilePath]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </f:DynamicallyChangeInvokeWorkflowPathInTestCaseRunner>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Invoke the test runner to execute a test case workflow." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="314,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TestFramework\TestRunner.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="TestResult">[TestResult]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="TestMessage">[TestMessage]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <f:DynamicallyChangeInvokeWorkflowPathInTestCaseRunner ExistingTestCaseFilePath="[TestCaseFile]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="DynamicallyChangeInvokeWorkflowPathInTestCaseRunner_4" NewTestCaseFilePath="TestFramework\BlankTestCase.xaml" TestRunnerFilePath="[projectTestRunnerFilePath]" />
+    <InvokeMethod sap2010:Annotation.AnnotationText="Use the stored current project level current directory to workaround a bug where the property is incorrectly updated if the invocation of the workflow file throws an exception. " DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="314,234" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetCurrentDirectory" TargetType="si:Directory">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <InArgument x:TypeArguments="x:String">[projectCurrentDirectory]</InArgument>
+    </InvokeMethod>
+  </Sequence>
+</Activity>
