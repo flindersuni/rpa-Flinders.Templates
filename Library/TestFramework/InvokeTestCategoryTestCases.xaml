@@ -6,6 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF0000016CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuVGVtcGxhdGVzXC93aWtpXC9GbGluZGVycy5UZW1wbGF0ZXMuTGlicmFyeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJGaWx0ZXIgYSBzZXQgb2YgdGVzdCBjYXNlcyB0byBhIHNwZWNpZmljIHRlc3QgY2FzZXMgYW5kIGV4ZWN1dGUgdGhlIG1hdGNoaW5nIHRlc3RzIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>811,2596</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -54,7 +55,6 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Filter a set of test cases to a specific test cases and execute the matching tests" DisplayName="InvokeTestCategoryTestCases" sap:VirtualizedContainerService.HintSize="771,2516" sap2010:WorkflowViewState.IdRef="Sequence_1">

@@ -14,6 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000160eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuVGVtcGxhdGVzXC93aWtpXC9GbGluZGVycy5UZW1wbGF0ZXMuTGlicmFyeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJBIHdvcmtmbG93IHRoYXQgd2lsbCBpbnZva2UgYWxsIHRlc3RzIGluIGFsbCB0ZXN0IHN1aXRlcyBhbmQgY2F0ZWdvcmllcy4gIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>480,1289</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -60,7 +61,6 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="A workflow that will invoke all tests in all test suites and categories. " DisplayName="InvokeAllTests" sap:VirtualizedContainerService.HintSize="440,1209" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -95,7 +95,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:CopyFile>
           <f:DiscoverTestCases sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DiscoverTestCases_1" TestCaseDirectory="[System.IO.Directory.GetCurrentDirectory()]" TestCases="[testCases]" />
-          <Sequence sap2010:Annotation.AnnotationText="Initialise test environment&#xD;&#xA;&#xD;&#xA;Add activities to this sequence to iniatilise resources that are required for subsequent tests suites" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap2010:Annotation.AnnotationText="Initialise test environment&#xA;&#xA;Add activities to this sequence to iniatilise resources that are required for subsequent tests suites" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -124,7 +124,7 @@
               </Assign>
             </Sequence>
           </Sequence>
-          <Sequence sap2010:Annotation.AnnotationText="Execute test suites&#xD;&#xA;&#xD;&#xA;Invoke  the &quot;TestFramework\InvokeTestCategoryTestCases.xaml&quot; workflow file to execute a set of tests in a test category.&#xD;&#xA;&#xD;&#xA;Add as many invokations of this file as necessary to run all test categories." sap:VirtualizedContainerService.HintSize="200,276" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Execute test suites&#xA;&#xA;Invoke  the &quot;TestFramework\InvokeTestCategoryTestCases.xaml&quot; workflow file to execute a set of tests in a test category.&#xA;&#xA;Add as many invokations of this file as necessary to run all test categories." sap:VirtualizedContainerService.HintSize="200,276" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

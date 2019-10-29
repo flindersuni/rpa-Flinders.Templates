@@ -1,11 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="TestCase" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="TestResult" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="TestMessage" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="A flag indicating if the test was successful or not" Name="TestResult" Type="OutArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="A message about the result of running the tests" Name="TestMessage" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF000001A0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuVGVtcGxhdGVzXC93aWtpXC9GbGluZGVycy5UZW1wbGF0ZXMuTGlicmFyeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJBIGJsYW5rIChwbGFjZWhvbGRlcikgdGVzdCBjYXNlIGZvciB1c2Ugd2l0aCB0aGUgVGVzdEZyYW1ld29ya1xcVGVzdFJ1bm5lci54YW1sIGZpbGUgdG8gZW5zdXJlIGxpYnJhcnkgcHJvamVjdHMgY29tcGlsZS4gIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>654,758</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>

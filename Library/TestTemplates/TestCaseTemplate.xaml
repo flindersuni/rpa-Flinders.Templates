@@ -9,6 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000124eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2V4YW1wbGUuaGVscGxpbmsuZmxpbmRlcnMuZWR1LmF1IiwiPEluaXRpYWxUb29sdGlwPmtfX0JhY2tpbmdGaWVsZCI6IlRlbXBsYXRlIFRlc3RDYXNlLiBcdTAwMGFcdTAwMGFVc2UgdGhpcyBzZXF1ZW5jZSBhcyBhIGJhc2lzIGZvciBhbGwgdGVzdCBjYXNlcy4iLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>480,1404</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -253,7 +254,7 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence sap2010:Annotation.AnnotationText="Test Case Tear Down&#xD;&#xA;&#xD;&#xA;Close any resources that were initialised as part of this test case which are no longer required." sap:VirtualizedContainerService.HintSize="200,201" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap2010:Annotation.AnnotationText="Test Case Tear Down&#xA;&#xA;Close any resources that were initialised as part of this test case which are no longer required." sap:VirtualizedContainerService.HintSize="200,201" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

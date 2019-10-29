@@ -1,12 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="InvokeTestCase" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Flinders_Foundation_Testing;assembly=Flinders.Foundation.Testing" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="TestCaseFile" Type="InArgument(x:String)" />
-    <x:Property Name="TestResult" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="TestMessage" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The path to the TestCase to invoke" Name="TestCaseFile" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="A flag indicating if the test was successful or not" Name="TestResult" Type="OutArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="A message about the result of running the tests" Name="TestMessage" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF000001ACeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuVGVtcGxhdGVzXC93aWtpXC9GbGluZGVycy5UZW1wbGF0ZXMuTGlicmFyeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJJbnZva2VzIGEgVGVzdCBDYXNlIEZpbGUsIGJ5IGR5bmFtaWNhbGx5IGNoYW5naW5nIHRoZSBwYXRoIHRvIGl0IGluIHRoZSBUZXN0RnJhbWV3b3JrXFxUZXN0UnVubmVyLnhhbWwgZmlsZSBhbmQgcmV0dXJucyBpdHMgcmVzdWx0LiIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</sap2010:Annotation.AnnotationText>
   <sap:VirtualizedContainerService.HintSize>376,1222</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InvokeTestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -59,8 +60,8 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invokes a Test Case File, by dynamically changing the path to it in the TestFramework\TestRunner.xaml file and returns its result." DisplayName="InvokeTestCase" sap:VirtualizedContainerService.HintSize="336,1142" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="projectTestRunnerFilePath" />
-      <Variable x:TypeArguments="x:String" Name="projectCurrentDirectory" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Full path to the test runner file" Name="projectTestRunnerFilePath" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Full path to the test the project root. " Name="projectCurrentDirectory" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
