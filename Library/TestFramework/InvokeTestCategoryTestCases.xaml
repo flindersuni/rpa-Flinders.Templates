@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InvokeTestCategoryTestCases" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Flinders_Foundation;assembly=Flinders.Foundation" xmlns:f1="clr-namespace:Flinders_Foundation_Testing;assembly=Flinders.Foundation.Testing" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InvokeTestCategoryTestCases" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:f="clr-namespace:Flinders_Foundation_Testing;assembly=Flinders.Foundation.Testing" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="The full test of detected test cases." Name="TestCases" Type="InOutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="The test category that is to be used to filter the set of tests" Name="TestCategory" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
     <x:Null />
   </mva:VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF0000016CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL2ZsaW5kZXJzdW5pXC9ycGEtRmxpbmRlcnMuVGVtcGxhdGVzXC93aWtpXC9GbGluZGVycy5UZW1wbGF0ZXMuTGlicmFyeSIsIjxJbml0aWFsVG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJGaWx0ZXIgYSBzZXQgb2YgdGVzdCBjYXNlcyB0byBhIHNwZWNpZmljIHRlc3QgY2FzZXMgYW5kIGV4ZWN1dGUgdGhlIG1hdGNoaW5nIHRlc3RzIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>811,2596</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>811,2646</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,7 +57,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Filter a set of test cases to a specific test cases and execute the matching tests" DisplayName="InvokeTestCategoryTestCases" sap:VirtualizedContainerService.HintSize="771,2516" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Filter a set of test cases to a specific test cases and execute the matching tests" DisplayName="InvokeTestCategoryTestCases" sap:VirtualizedContainerService.HintSize="771,2566" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="The set of test cases matching the specified test category" Name="filteredTestCases" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The detected RPA environment" Name="rpaEnvironment" />
@@ -72,13 +72,11 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <f:DetectEnvironment sap2010:Annotation.AnnotationText="Detect which environment is being used to run the tests" DetectedEnvironment="[rpaEnvironment]" sap:VirtualizedContainerService.HintSize="749,64" sap2010:WorkflowViewState.IdRef="DetectEnvironment_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </f:DetectEnvironment>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="749,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DetectEnvironment.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="DetectedEnvironment">[rpaEnvironment]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:LogMessage sap2010:Annotation.AnnotationText="Log the environment the tests are executing in." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="749,118" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[string.Format(&quot;Test cases are executing in the {0} environment.&quot;,rpaEnvironment)]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -100,14 +98,14 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <f1:FilterByTestCategory sap2010:Annotation.AnnotationText="Filter the list of test cases by test category" FilteredTestCases="[filteredTestCases]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="FilterByTestCategory_1" TestCases="[TestCases]" TestCategory="[TestCategory]">
+          <f:FilterByTestCategory sap2010:Annotation.AnnotationText="Filter the list of test cases by test category" FilteredTestCases="[filteredTestCases]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="FilterByTestCategory_1" TestCases="[TestCases]" TestCategory="[TestCategory]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </f1:FilterByTestCategory>
+          </f:FilterByTestCategory>
         </Sequence>
       </If.Then>
       <If.Else>
@@ -134,16 +132,17 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Execute each of the test cases in the filtered dataset in sequence." DataTable="[filteredTestCases]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="749,1650" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Execute each of the test cases in the filtered dataset in sequence." DataTable="[filteredTestCases]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="749,1677" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="test" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="719,1475" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap2010:Annotation.AnnotationText="Undertake the steps ncessary to run the list of filtered test cases. " DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="719,1502" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" sap2010:Annotation.AnnotationText="Find the Filtered Test Case in the Test Cases data table." DataTable="[TestCases]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="697,64" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="TestCase" LookupValue="[test(&quot;TestCase&quot;).ToString()]" RowIndex="[testRowIndex]">
@@ -188,10 +187,11 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="336,384" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap2010:Annotation.AnnotationText="Skip this test case as it is not appropriate to run it on this environment" sap:VirtualizedContainerService.HintSize="336,426" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage sap2010:Annotation.AnnotationText="Log that this Test Case cannot be run in this environment." DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,133" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[string.Format(&quot;The Test Case '{0}' has a black list in effect for environment '{1}' and has not been run&quot;,test(&quot;TestCase&quot;),rpaEnvironment)]">
