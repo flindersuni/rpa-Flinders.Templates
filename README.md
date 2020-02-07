@@ -1,6 +1,8 @@
 <!-- markdownlint-disable no-trailing-punctuation -->
 # Flinders.Templates #
 
+[![Build Status](https://travis-ci.org/flindersuni/rpa-Flinders.Templates.svg?branch=master)](https://travis-ci.org/flindersuni/rpa-Flinders.Templates)
+
 This repository contains template [UiPath][uipath] projects. They are used by the
 Robotic Process Automation (RPA) team at [Flinders University][flinders].
 
